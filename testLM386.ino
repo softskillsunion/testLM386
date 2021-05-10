@@ -19,8 +19,8 @@ void loop()
 {
   soundVolume = analogRead(A0);
   // soundVolume = map(soundVolume, 0, 1024, 0, 10);
-  // soundVolume = map(soundVolume, 100, 850, 0, 10);
-  soundVolume = map(soundVolume, 50, 300, 0, 10); // WDA藍瓶
+  soundVolume = map(soundVolume, 100, 850, 0, 10);
+  // soundVolume = map(soundVolume, 50, 300, 0, 10); // WDA藍瓶
   if (soundVolume == 0)
   {
     counter++;
