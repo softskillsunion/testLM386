@@ -28,7 +28,6 @@ void loop()
     {
       strip.clear();
       strip.show();
-      // clearPixel(soundVolume);
       Serial.println(0);
     }
   }
@@ -36,7 +35,7 @@ void loop()
   {
     if (counter < times)
     {
-      strip.setPixelColor(0, strip.Color(255, 0, 255));
+      setColor(soundVolume, 255, 0, 255);
       clearPixel(soundVolume);
       strip.show();
       Serial.println(1);
@@ -47,8 +46,7 @@ void loop()
   {
     if (counter < times)
     {
-      strip.setPixelColor(0, strip.Color(255, 0, 255));
-      strip.setPixelColor(1, strip.Color(0, 255, 255));
+      setColor(soundVolume, 0, 255, 255);
       clearPixel(soundVolume);
       strip.show();
       Serial.println(2);
@@ -59,9 +57,7 @@ void loop()
   {
     if (counter < times)
     {
-      strip.setPixelColor(0, strip.Color(255, 0, 255));
-      strip.setPixelColor(1, strip.Color(0, 255, 255));
-      strip.setPixelColor(2, strip.Color(0, 0, 255));
+      setColor(soundVolume, 0, 0, 255);
       clearPixel(soundVolume);
       strip.show();
       Serial.println(3);
@@ -72,10 +68,7 @@ void loop()
   {
     if (counter < times)
     {
-      strip.setPixelColor(0, strip.Color(255, 0, 255));
-      strip.setPixelColor(1, strip.Color(0, 255, 255));
-      strip.setPixelColor(2, strip.Color(0, 0, 255));
-      strip.setPixelColor(3, strip.Color(0, 255, 0));
+      setColor(soundVolume, 0, 255, 0);
       clearPixel(soundVolume);
       strip.show();
       Serial.println(4);
@@ -86,11 +79,7 @@ void loop()
   {
     if (counter < times)
     {
-      strip.setPixelColor(0, strip.Color(255, 0, 255));
-      strip.setPixelColor(1, strip.Color(0, 255, 255));
-      strip.setPixelColor(2, strip.Color(0, 0, 255));
-      strip.setPixelColor(3, strip.Color(0, 255, 0));
-      strip.setPixelColor(4, strip.Color(255, 209, 5));
+      setColor(soundVolume, 255, 209, 5);
       clearPixel(soundVolume);
       strip.show();
       Serial.println(5);
@@ -101,12 +90,7 @@ void loop()
   {
     if (counter < times)
     {
-      strip.setPixelColor(0, strip.Color(255, 0, 255));
-      strip.setPixelColor(1, strip.Color(0, 255, 255));
-      strip.setPixelColor(2, strip.Color(0, 0, 255));
-      strip.setPixelColor(3, strip.Color(0, 255, 0));
-      strip.setPixelColor(4, strip.Color(255, 209, 5));
-      strip.setPixelColor(5, strip.Color(255, 88, 10));
+      setColor(soundVolume, 255, 88, 10);
       clearPixel(soundVolume);
       strip.show();
       Serial.println(6);
@@ -117,13 +101,7 @@ void loop()
   {
     if (counter < times)
     {
-      strip.setPixelColor(0, strip.Color(255, 0, 255));
-      strip.setPixelColor(1, strip.Color(0, 255, 255));
-      strip.setPixelColor(2, strip.Color(0, 0, 255));
-      strip.setPixelColor(3, strip.Color(0, 255, 0));
-      strip.setPixelColor(4, strip.Color(255, 209, 5));
-      strip.setPixelColor(5, strip.Color(255, 88, 10));
-      strip.setPixelColor(6, strip.Color(255, 97, 176));
+      setColor(soundVolume, 255, 97, 176);
       clearPixel(soundVolume);
       strip.show();
       Serial.println(6);
@@ -134,14 +112,7 @@ void loop()
   {
     if (counter < times)
     {
-      strip.setPixelColor(0, strip.Color(255, 0, 255));
-      strip.setPixelColor(1, strip.Color(0, 255, 255));
-      strip.setPixelColor(2, strip.Color(0, 0, 255));
-      strip.setPixelColor(3, strip.Color(0, 255, 0));
-      strip.setPixelColor(4, strip.Color(255, 209, 5));
-      strip.setPixelColor(5, strip.Color(255, 88, 10));
-      strip.setPixelColor(6, strip.Color(255, 97, 176));
-      strip.setPixelColor(7, strip.Color(255, 0, 0));
+      setColor(soundVolume, 255, 0, 0);
       // clearPixel(soundVolume);
       strip.show();
       Serial.println(6);
@@ -150,6 +121,14 @@ void loop()
   }
 
   delay(60);
+}
+
+void setColor(int endPixel, int R, int G, int B)
+{
+  for (int i = 0; i < endPixel; i++)
+  {
+    strip.setPixelColor(i, strip.Color(R, G, B));
+  }
 }
 
 void clearPixel(int startPixel)
